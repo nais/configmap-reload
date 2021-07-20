@@ -1,4 +1,4 @@
 #!/bin/sh
-trap 'exit 0' SIGINT SIGQUIT SIGTERM
-echo "$@"
+set -o monitor
+trap 'exit(0)' CHLD
 /configmap-reload "$@"
